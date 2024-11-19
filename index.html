@@ -3,27 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <form class="registration">
+        <label for="first">Фамилия</label>
+        <input type="text" id="first" name="first" placeholder="Иванов" required><br>
 
-    <input type="text" placeholder="Фамилия"><br>
+        <label for="second">Имя</label>
+        <input type="text" id="second" name="second" placeholder="Иван" required><br>
 
-    <input type="text" placeholder="Имя"><br>
+        <label for="third">Отчество</label>
+        <input type="text" id="third" name="third" placeholder="Иванович"><br>
 
-    <input type="text" placeholder="Отчество"><br>
+        <label for="bday">Дата рождения</label>
+        <input type="date" id="bday" name="bday" placeholder="дд.мм.гггг" required><br>
 
-    <input type="date" placeholder="дд.мм.гггг"><br>
-    <h6>Пол</h6>
-    <input type="checkbox" placeholder="м">
-    <input type="checkbox" placeholder="ж"><br>
+        <label>Пол</label>
+        <div class="gender">
+            <label for="male">
+            <input type="radio" id="male" name="gender" value="1">М
+            </label>
+            <label for="female">
+            <input type="radio" id="female" name="gender" value="2">Ж
+            </label>
+        </div>
 
-    <input type="text" placeholder="Телефон"><br>
+        <label for="phone"></label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___ __ __" required><br>
 
-    <input type="checkbox">
-    <input type="checkbox"><br>1
+        <div class="agree">
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree"> Я согласен на обработку моих персональных данных</label>
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Подписаться на рассылку</label><br>
+        </div>
 
-    <input type="button" placeholder="Отказаться">
-    <input type="button" placeholder="Выдать карту скидок">
+        <div class="buttons">
+            <button class="cancel">ОТКАЗАТЬСЯ</button>
+            <button class="submit">ВЫДАТЬ КАРТУ СКИДОК</button>
+        </div>
+        <div class="error-message hidden" id="error-message"></div>
+    </form>
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <div class="modal-container">
+                <div class="modal-header">ПОДТВЕРДИТЕ НОМЕР ВАШЕГО МОБИЛЬНОГО ТЕЛЕФОНА</div>
+                <div class="modal-text">Прежде чем выдать Вам карту скидок, необходимо подтвердить Ваш номер телефона.</div>
+                <div class="phone-number"></div>
+                <div class="modal-text">Если номер неверный, нажмите кнопку "Исправить номер телефона".<br>Если в номере ошибки нет, нажмите "Подтвердить номер телефона".</div>
+                <div class="buttons">
+                    <button class="button confirm-button">ПОДТВЕРДИТЬ НОМЕР ТЕЛЕФОНА</button>
+                    <button class="button cancel-button">ИСПРАВИТЬ НОМЕР</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>
