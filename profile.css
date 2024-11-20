@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-container {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.FIO {
+    margin: 0;
+    color: #333333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.phone-number {
+    margin: 5px 0;
+    color: #555555;
+    font-size: 14px;
+}
+
+.bday {
+    margin: 5px 0;
+    color: #555555;
+    font-size: 14px;
+}
+
+.discount {
+    margin: 5px 0;
+    color: #555555;
+    font-size: 14px;
+}
+
+.balance {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+}
+
+.balance span {
+    font-weight: bold;
+    color: #1a73e8;
+}
