@@ -9,7 +9,8 @@ body {
     background-color: #f8f8f8;
 }
 .registration {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -20,6 +21,7 @@ body {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .registration input[type="text"],
@@ -94,6 +96,7 @@ button:hover {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     position: relative;
+
 }
 
 .popup .close {
@@ -111,7 +114,8 @@ button:hover {
 
 .modal-container {
     background-color: #fff;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
