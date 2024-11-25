@@ -1,0 +1,15 @@
+# Исключить папку node_modules
+node_modules/
+
+# Файлы логов
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Локальные настройки редактора кода
+.vscode/
+.idea/
+
+# Системные файлы ОС
+.DS_Store
+Thumbs.db

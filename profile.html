@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="header">
+            <div class="FIO"></div>
+            <div class="phone-number"></div>
+            <div class="bday"></div>
+            <div class="discount"></div>
+        </div>
+        <div class="balance">
+            <p>Баланс: <span></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Загружаем данные профиля через API
+        fetch("/api/profile")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Не удалось загрузить данные профиля");
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.querySelector(".FIO").textContent = `${data.first} ${data.second} ${data.third || ""}`;
+                document.querySelector(".phone-number").textContent = `Телефон: ${data.phone}`;
+                document.querySelector(".bday").textContent = `Дата рождения: ${data.bday}`;
+                document.querySelector(".discount").textContent = `Скидка: ${data.discount}%`;
+                document.querySelector(".balance span").textContent = `${data.balance} р`;
+            })
+            .catch(err => {
+                console.error(err);
+                document.body.innerHTML = `<p>Ошибка загрузки профиля</p>`;
+            });
+    </script>
+</body>
+</html>
