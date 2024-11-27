@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Здравствуйте!</title>
+    <link rel="stylesheet" href="greet.css">
+</head>
+<body>
+    <div class="euler-top-left"></div>
+    <div class="euler-bottom-right"></div>
+    <div class="greet-container">
+        <img src="https://iss.ponarth.com/i/logo_white_mini.png" alt="Logo" class="logo">
+        <h1>Здравствуйте!</h1>
+        <h2>Подтердите номер телефона для продолжения покупок</h2>
+        
+        <!-- Форма отправляется на сервер -->
+        <form action="/confirm-phone" method="POST">
+            <label for="phone">Введите номер телефона:</label>
+            <div class="phone-container">
+                <input type="tel" id="phone" name="phone" placeholder="+7-952-999-15-18" required>
+                <button type="button" class="send-sms">Отправить код</button>
+            </div>
+            <label>Код-потдверждение отпрвлен на указанный номер</label>
+            <input type="text" id="sms-code" name="smsCode" placeholder="Введите код из СМС" required>
+            <label>Если код не пришёл, нажмите <span>отправить повторно (30 сек)</span></label>
+            <div class="form-footer">
+                <button type="submit">Подтвердить и продолжить</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

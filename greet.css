@@ -1,0 +1,210 @@
+/* Общий стиль */ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #171616; /* Темный фон */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Фиксированная высота экрана */
+    backdrop-filter: blur(60px);
+    position: relative; /* Для абсолютного позиционирования эйлеров */
+}
+
+html, body {
+    height: 100%; 
+    overflow: hidden; 
+}
+
+.euler-top-left, .euler-bottom-right {
+    position: absolute;
+    width: 150px; /* Радиус свечения */
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255, 223, 0, 0.2);
+    box-shadow: 0 0 200px 80px rgba(255, 223, 0, 0.3);
+    pointer-events: none;
+}
+
+.euler-top-left {
+    top: -150px; /* Убираем "ядро" за экран */
+    left: -150px;
+}
+
+.euler-bottom-right {
+    bottom: -150px; /* Опускаем эйлер, чтобы его ядро тоже ушло за границу */
+    right: -150px;
+}
+
+.greet-container {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    justify-content: space-between; /* Отправляем элементы вверх и вниз */
+    height: 100vh; /* Контейнер занимает всю высоту экрана */
+    width: 100%; /* Контейнер растягивается на всю ширину экрана */
+    max-width: 400px; /* Ограничиваем ширину */
+    padding: 20px;
+    box-sizing: border-box;
+    background: #171616;
+} 
+
+/* Стили для изображения */
+.logo {
+    width: 89px;  /* Ширина изображения */
+    height: 69px; /* Высота изображения */
+    margin-bottom: 20px; /* Отступ от изображения до текста */
+    margin-top: 35px;
+    align-self: center; /* Центрируем изображение */
+}
+
+/* Стили для текста */
+h1 {
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 43.88px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+h2 {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FCF9F2;
+}
+
+/* Формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1; /* Это гарантирует, что форма будет занимать доступное пространство */
+}
+
+label {
+    font-size: 14px;
+    text-align: left;
+    color: #FCF9F2;
+}
+
+.phone-container {
+    position: relative; /* Для позиционирования кнопки */
+    display: flex;
+    align-items: center;
+}
+
+.phone-container input {
+    width: 100%; /* Поле ввода занимает всё пространство */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #444;
+    border-radius: 8px; /* Полностью скругляем */
+    background: #171616;
+    color: #fff;
+    padding-right: 90px; /* Оставляем место для кнопки */
+}
+
+.phone-container input::placeholder {
+    color: #888;
+}
+
+.phone-container .send-sms {
+    position: absolute; /* Располагаем поверх инпут-бокса */
+    top: 0;
+    right: 0;
+    height: 100%; /* Высота кнопки совпадает с инпут-боксом */
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #F9D03F;
+    color: #000;
+    border: none; /* Убираем рамку кнопки */
+    border-radius: 0 8px 8px 0; /* Скругляем только правую сторону */
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.phone-container .send-sms:hover {
+    background: #ffcf40;
+}
+
+/* Центрируем текст только для поля ввода кода */
+#sms-code {
+    text-align: center; /* Центрируем текст в поле ввода кода */
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #F9D03F;
+    border-radius: 8px;
+    background: #171616;
+    color: #fff;
+}
+
+input:focus {
+    background: #171616; /* Темный фон, как у обычного состояния */
+    outline: none; /* Убираем стандартную синюю обводку */
+    border: 1px solid #F9D03F; /* Золотая рамка для выделения */
+    color: #fff; /* Белый текст */
+}
+
+input::placeholder {
+    color: #F9D03F;
+}
+
+span {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #F9D03F;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Кнопка внизу */
+.form-footer {
+    display: flex;
+    justify-content: center; /* Центрируем кнопку */
+    margin-top: auto; /* Это гарантирует, что кнопка будет всегда внизу */
+}
+
+.form-footer button {
+    width: 100%; /* Кнопка занимает всю ширину */
+    max-width: 300px; /* Ограничиваем её ширину */
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #ffcf40;
+}

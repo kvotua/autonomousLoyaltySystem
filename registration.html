@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="registration" action="/submit" method="POST">
+        <img src="https://iss.ponarth.com/i/logo_white_mini.png">
+        <div><label>Зарегистрируйтесь в программе лояльности и получайте кэшбек 10% приобретая продукцию Понарт. Это займёт пару минут.</label></div>
+        <input type="text" id="first" name="first" placeholder="Фамилия" required><br>
+
+        <input type="text" id="second" name="second" placeholder="Имя" required><br>
+
+        <input type="text" id="third" name="third" placeholder="Отчество"><br>
+
+        <label>Введите дату рождения:</label>
+        <input type="date" id="bday" name="bday" required><br>
+
+        <label>Укажите ваш пол</label>
+        <div class="gender">
+            <label for="male">
+                <input type="radio" id="male" name="gender" value="1">М
+            </label>
+            <label for="female">
+                <input type="radio" id="female" name="gender" value="2">Ж
+            </label>
+        </div>
+
+        <label for="agree">
+            <input type="checkbox" id="agree" name="agree" required>
+            Даю согласие на обработку персональных данных
+        </label>
+
+        <div class="buttons">
+            <button type="button" onclick="window.location.href='/greet.html'">В другой раз</button><br>
+            <button type="submit">Оформить карту</button>
+        </div>
+    </form>
+</body>
+</html>

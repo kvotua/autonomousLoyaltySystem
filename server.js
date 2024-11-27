@@ -35,11 +35,44 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
+// Установка greet.html как стартовой страницы
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "greet.html"));
+});
+
+app.get("/registration", (req, res) => {
+    res.sendFile(path.join(__dirname, "registration.html"));
+});
+
+app.get("/profile", (req, res) => {
+    res.sendFile(path.join(__dirname, "profile.html"));
+});
+
+
+// Маршрут для сохранения номера телефона
+app.post("/confirm-phone", (req, res) => {
+    const { phone, smsCode } = req.body;
+
+    if (!phone || !smsCode) {
+        return res.status(400).send("Необходимо ввести номер телефона и код");
+    }
+
+    // Сохраняем номер телефона в сессии
+    req.session.phone = phone;
+
+    // Перенаправляем на страницу без расширения .html
+    res.redirect("/registration");
+});
+
 // Обработка формы регистрации
 app.post("/submit", (req, res) => {
-    const { first, second, third, bday, gender, phone } = req.body;
+    const { first, second, third, bday, gender } = req.body;
+    const phone = req.session.phone; // Получаем номер телефона из сессии
 
-    // Проверяем, существует ли запись с таким номером телефона
+    if (!phone) {
+        return res.status(400).send("Номер телефона не найден");
+    }
+
     const checkUserSql = `SELECT * FROM users WHERE phone = ?`;
     db.query(checkUserSql, [phone], (err, results) => {
         if (err) {
@@ -52,13 +85,11 @@ app.post("/submit", (req, res) => {
             // Пользователь уже существует, сохраняем ID в сессии
             req.session.userId = results[0].id;
             console.log("Пользователь найден, переходим к профилю:", results[0]);
-            res.redirect("/profile.html");
+            res.redirect("/profile");
         } else {
             // Если пользователя нет, добавляем новую запись
-            const insertUserSql = `
-                INSERT INTO users (first, second, third, bday, gender, phone, balance, discount)
-                VALUES (?, ?, ?, ?, ?, ?, 0, 5)
-            `;
+            const insertUserSql = `INSERT INTO users (first, second, third, bday, gender, phone, balance, discount)
+                                   VALUES (?, ?, ?, ?, ?, ?, 0, 5)`;
             db.query(insertUserSql, [first, second, third, bday, gender, phone], (err, result) => {
                 if (err) {
                     console.error("Ошибка при добавлении данных:", err);
@@ -67,13 +98,12 @@ app.post("/submit", (req, res) => {
                     // Сохраняем ID нового пользователя в сессии
                     req.session.userId = result.insertId;
                     console.log("Новый пользователь создан:", result.insertId);
-                    res.redirect("/profile.html");
+                    res.redirect("/profile");
                 }
             });
         }
     });
 });
-
 
 // API для получения данных профиля
 app.get("/api/profile", (req, res) => {

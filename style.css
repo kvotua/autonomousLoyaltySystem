@@ -186,7 +186,11 @@ button:hover {
     display: block;
 }
 
-
+img {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 
 
 
