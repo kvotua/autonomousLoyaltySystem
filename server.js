@@ -89,7 +89,7 @@ app.post("/submit", (req, res) => {
         } else {
             // Если пользователя нет, добавляем новую запись
             const insertUserSql = `INSERT INTO users (first, second, third, bday, gender, phone, balance, discount)
-                                   VALUES (?, ?, ?, ?, ?, ?, 0, 5)`;
+                                   VALUES (?, ?, ?, ?, ?, ?, 0, 10)`;
             db.query(insertUserSql, [first, second, third, bday, gender, phone], (err, result) => {
                 if (err) {
                     console.error("Ошибка при добавлении данных:", err);
