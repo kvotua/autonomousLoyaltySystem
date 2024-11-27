@@ -189,6 +189,7 @@ button {
     display: flex;
     justify-content: center; /* Центрируем кнопку */
     margin-top: auto; /* Это гарантирует, что кнопка будет всегда внизу */
+    margin-bottom: 10px;
 }
 
 .form-footer button {
