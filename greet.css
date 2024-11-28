@@ -1,4 +1,6 @@
 /* Общий стиль */ 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -127,7 +129,7 @@ label {
     background: #F9D03F;
     color: #000;
     border: none; /* Убираем рамку кнопки */
-    border-radius: 0 8px 8px 0; /* Скругляем только правую сторону */
+    border-radius: 8px; /* Скругляем только правую сторону */
     cursor: pointer;
     transition: background 0.3s;
 }
