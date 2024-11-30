@@ -7,23 +7,24 @@
     <link rel="stylesheet" href="greet.css">
 </head>
 <body>
-    <div class="euler-top-left"></div>
-    <div class="euler-bottom-right"></div>
     <div class="greet-container">
+        <div class="euler-top-left"></div>
+        <div class="euler-bottom-right"></div>
         <img src="https://iss.ponarth.com/i/logo_white_mini.png" alt="Logo" class="logo">
         <h1>Здравствуйте!</h1>
-        <h2>Подтердите номер телефона для продолжения покупок</h2>
+        <label>Подтердите номер телефона для продолжения покупок</label>
         
         <!-- Форма отправляется на сервер -->
         <form action="/confirm-phone" method="POST">
-            <label for="phone">Введите номер телефона:</label>
             <div class="phone-container">
                 <input type="tel" id="phone" name="phone" placeholder="+7-952-999-15-18" required>
                 <button type="button" class="send-sms">Отправить код</button>
             </div>
-            <label>Код-потдверждение отпрвлен на указанный номер</label>
+            <label class="labelSMS">Код-потдверждение отпрвлен на указанный номер</label>
             <input type="text" id="sms-code" name="smsCode" placeholder="Введите код из СМС" required>
+            <div class="labelSMS">
             <label>Если код не пришёл, нажмите <span>отправить повторно (30 сек)</span></label>
+            </div>
             <div class="form-footer">
                 <button type="submit">Подтвердить и продолжить</button>
             </div>

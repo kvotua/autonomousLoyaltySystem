@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: #171616;
+    color: #fff;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    backdrop-filter: blur(60px);
+    position: relative;
+}
+
+html, body {
+    height: auto;
+    overflow-y: auto;
+}
+
+.euler-top-left, .euler-bottom-right {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    box-shadow: 0 0 200px 80px rgba(249, 209, 63, 0.192);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.euler-top-left {
+    top: 25px;
+    left: 55px;
+}
+
+.euler-bottom-right {
+    bottom: 75px;
+    right: -50px;
+}
+
+.logo {
+    width: 89px;
+    height: 69px;
+    margin-bottom: 20px;
+    margin-top: 35px;
+    align-self: center;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 43.88px;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.registration-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #00000000;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #444;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+    flex-grow: 1; 
+}
+
+@media (max-width: 500px) {
+    .registration-container {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.FIO {
+    margin-top: 20px;
+}
+
+.FIO input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    height: 53px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #171616;
+    color: #fff;
+    margin-top: 5px;
+}
+
+label {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    text-align: left;
+    color: #FCF9F2;
+    margin-top: 20px;
+}
+
+.registration-container input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    height: 35px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #171616;
+    color: #fff;
+    margin-top: 5px;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+.gender {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.gender label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+    background: #ffc107;
+    color: #000;
+}
+
+button[type="button"] {
+    background: #444;
+    color: #fff;
+}
+
+button:hover {
+    background: #ffcf40;
+}
+
+button[type="submit"]:hover {
+    background: #ffb300;
+}
+
+button[type="button"]:hover {
+    background: #555;
+}
