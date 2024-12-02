@@ -55,7 +55,7 @@ html, body {
     background: #00000000;
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid #444;
+    border: 1px solid rgba(105, 105, 105, 1);
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -116,7 +116,7 @@ label {
     padding: 10px;
     font-size: 16px;
     height: 31px;
-    border: 1px solid #444;
+    border: 1px solid rgba(105, 105, 105, 1);
     border-radius: 8px; 
     background: #171616;
     color: #fff;
@@ -124,7 +124,7 @@ label {
 }
 
 .phone-container input::placeholder {
-    color: #888;
+    color: rgba(79, 81, 84, 1);
     text-indent: 25px;
     outline: none;
 }
