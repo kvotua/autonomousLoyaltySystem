@@ -203,10 +203,6 @@ button[type="button"] {
     border: 1px solid rgba(248, 208, 64, 1);
 }
 
-/* input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-} */
-
 .custom-date {
     position: relative;
 }
